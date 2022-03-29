@@ -48,19 +48,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_29_075848) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "FirstName"
-    t.string "LastName"
-    t.string "UserName"
+    t.string "firstName"
+    t.string "lastName"
+    t.string "userName"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "description"
-    t.boolean "IsItCertified"
-    t.string "Localisation"
-    t.datetime "BirthDate"
+    t.boolean "isItCertified"
+    t.string "localisation"
+    t.datetime "birthDate"
     t.string "imgUrl"
-    t.integer "NbFollowing"
-    t.integer "NbFollower"
+    t.integer "nbFollowing"
+    t.integer "nbFollower"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
