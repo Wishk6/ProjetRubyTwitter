@@ -137,7 +137,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.3-x64-mingw32)
+    nokogiri (1.13.3-arm64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (4.0.6)
@@ -204,8 +204,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.5)
-      tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -225,6 +223,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  arm64-darwin-21
   x64-mingw32
 
 DEPENDENCIES
