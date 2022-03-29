@@ -6,9 +6,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :FirstName
-      t.string :LastName
-      t.string :UserName
+      t.string :firstName
+      t.string :lastName
+      t.string :userName
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -18,12 +18,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Profile 
       t.string :description 
-      t.boolean :IsItCertified 
-      t.string :Localisation 
-      t.datetime :BirthDate
+      t.boolean :isItCertified 
+      t.string :localisation 
+      t.datetime :birthDate
       t.string :imgUrl 
-      t.integer :NbFollowing
-      t.integer :NbFollower
+      t.integer :nbFollowing
+      t.integer :nbFollower
      ## Information 
  
       t.timestamps null: false
