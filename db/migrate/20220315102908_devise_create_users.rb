@@ -2,7 +2,7 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
-    create_table :users do |t|
+    create_table :users, force: :cascade do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -16,6 +16,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ## Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email 
+     
       ## Profile 
       t.string :description 
       t.boolean :isItCertified 
@@ -25,7 +31,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.integer :nbFollowing
       t.integer :nbFollower
      ## Information 
- 
       t.timestamps null: false
     end
 
