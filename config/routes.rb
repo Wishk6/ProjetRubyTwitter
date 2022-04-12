@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :retweets
+  resources :likes
   resources :follows
   resources :tweets
   devise_for :users
