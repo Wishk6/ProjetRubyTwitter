@@ -2,22 +2,22 @@ class RetweetsController < ApplicationController
   before_action :set_retweet, only: %i[ show edit update destroy ]
 
   # GET /retweets or /retweets.json
-  def index
-    @retweets = Retweet.all
-  end
+  # def index
+  #   @retweets = Retweet.all
+  # end
 
   # GET /retweets/1 or /retweets/1.json
   def show
   end
 
   # GET /retweets/new
-  def new
-    @retweet = Retweet.new
-  end
+  # def new
+  #   @retweet = Retweet.new
+  # end
 
   # GET /retweets/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /retweets or /retweets.json
   def create

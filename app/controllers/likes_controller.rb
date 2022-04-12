@@ -2,22 +2,22 @@ class LikesController < ApplicationController
   before_action :set_like, only: %i[ show edit update destroy ]
 
   # GET /likes or /likes.json
-  def index
-    @likes = Like.all
-  end
+  # def index
+  #   @likes = Like.all
+  # end
 
   # GET /likes/1 or /likes/1.json
   def show
   end
 
   # GET /likes/new
-  def new
-    @like = Like.new
-  end
+  # def new
+  #   @like = Like.new
+  # end
 
   # GET /likes/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /likes or /likes.json
   def create

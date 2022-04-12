@@ -2,22 +2,22 @@ class FollowsController < ApplicationController
   before_action :set_follow, only: %i[ show edit update destroy ]
 
   # GET /follows or /follows.json
-  def index
-    @follows = Follow.all
-  end
+  # def index
+  #   @follows = Follow.all
+  # end
 
   # GET /follows/1 or /follows/1.json
   def show
   end
 
   # GET /follows/new
-  def new
-    @follow = Follow.new
-  end
+  # def new
+  #   @follow = Follow.new
+  # end
 
   # GET /follows/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /follows or /follows.json
   def create
