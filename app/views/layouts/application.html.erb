@@ -12,11 +12,24 @@
 
   <body>
 
-   <div>
+ <!--
+  <header>
+    <% if current_user.present?%> 
+        <%= link_to "Mon Profil", destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "Menu de connexion", new_user_session_path %>
+    <% end %>
+  </header>
+  !-->
+
+  <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    </div>
+  </div>
 
-    <%= yield %>
+
+
+  <%= yield %>
+
   </body>
 </html>
