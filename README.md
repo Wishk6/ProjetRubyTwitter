@@ -5,8 +5,6 @@
 install dep : <code> bundle install </code>
 <br>
 
-Ne pas oublier de <code>npm install</code> (j'ai enlevé le node_module)
-
 Aller à la racine de rubyTwitterProjet ==>  <code>rails s</code>
 <br>
 
