@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
+  #before_action :set_tweet, only: %i[ show edit update destroy ]
 
   # GET /tweets or /tweets.json
   # def index
@@ -8,6 +8,12 @@ class TweetsController < ApplicationController
 
   # GET /tweets/1 or /tweets/1.json
   def show
+    begin
+      @tweet = Tweet.find(params[:id])
+      @msg = 'success'
+    rescue StandardError => e
+      @msg = 'error'
+    end
   end
 
   # GET /tweets/new
