@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RubyTwitterProject</title>
+      <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+        <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+<!--!>
+
+    <h1>Home</h1>
+    <h2> nunbers of tweets: <%= @tweet %> </h2>
+<!-->
+<%# <%= react_component 'MaterialComponentList' %>
+<%# <div class="mdc-menu mdc-menu-surface">
+  <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+    <li class="mdc-list-item" role="menuitem">
+      <span class="mdc-list-item__ripple"></span>
+      <span class="mdc-list-item__text">A Menu Item</span>
+    </li>
+    <li class="mdc-list-item" role="menuitem">
+      <span class="mdc-list-item__ripple"></span>
+      <span class="mdc-list-item__text">Another Menu Item</span>
+    </li>
+  </ul>
+</div> %>
+
+  </body>
+</html>

@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :retweets
-  resources :likes
-  resources :follows
-  resources :tweets
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "routes#home"
+  get '/tweet/:id', to: 'tweets#show'
 end

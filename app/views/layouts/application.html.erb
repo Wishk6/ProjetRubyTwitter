@@ -12,22 +12,22 @@
 
   <body>
 
- <!--
-  <header>
-    <% if current_user.present?%> 
-        <%= link_to "Mon Profil", destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to "Menu de connexion", new_user_session_path %>
-    <% end %>
-  </header>
-  !-->
-
   <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
   </div>
 
-
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">j'adore le front</a></li>
+        <li><a href="badges.html">Vive la vie</a></li>
+        <li><a href="collapsible.html">Saucisse</a></li>
+      </ul>
+    </div>
+    <a class="waves-effect waves-light btn">Tweet</a>
+  
 
   <%= yield %>
 
