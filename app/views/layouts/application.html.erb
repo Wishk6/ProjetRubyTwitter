@@ -3,33 +3,28 @@
   <head>
     <title>RubyTwitterProject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application.css" %>
   </head>
-
   <body>
-
-  <div>
+  <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
+    <% if current_user.present?%>
+      <%= link_to "Profil", href="/users/sign_in" %>
+    <% else %>
+      <%= link_to "M'enregistrer", new_user_session_path %>
+    <% end %>
+   
+    <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-  </div>
-
- <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">j'adore le front</a></li>
-        <li><a href="badges.html">Vive la vie</a></li>
-        <li><a href="collapsible.html">Saucisse</a></li>
-      </ul>
     </div>
-    <a class="waves-effect waves-light btn">Tweet</a>
+    
+    <li><%= current_user.email %></li>
+    
+    <h1>/app/views/layouts/app.html.erb</h1>
+   
+    <h2 class="test"> Tweets: <%= @msg %> </h2>
+    
+    <%= yield %>
   
-
-  <%= yield %>
-
   </body>
 </html>
