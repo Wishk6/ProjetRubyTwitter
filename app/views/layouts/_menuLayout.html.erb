@@ -39,7 +39,7 @@
      
       <div class="profileWrapper">
         <%= image_tag 'profile.png', width: 40, height: 40 %>
-        
+        <%= button_to "logout", destroy_user_session_path, method: :delete  %>
         <div class="idWrapper">
           
           <div class="name">
