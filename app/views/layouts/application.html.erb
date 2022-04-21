@@ -9,20 +9,20 @@
   <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
     <% if current_user.present?%>
       <%= link_to "Profil", href="/users/sign_in" %>
+    <%= button_to "logout", destroy_user_session_path, method: :delete  %>
     <% else %>
       <%= link_to "M'enregistrer", new_user_session_path %>
     <% end %>
    
+    <%= render "layouts/menuLayout" %> 
     <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
     
-    <li><%= current_user.email %></li>
-    
-    <h1>/app/views/layouts/app.html.erb</h1>
+    <%# <h1>/app/views/layouts/app.html.erb</h1> %>
    
-    <h2 class="test"> Tweets: <%= @msg %> </h2>
+    <%# <h2> Tweets: <%= @msg %> </h2> 
     
     <%= yield %>
 
