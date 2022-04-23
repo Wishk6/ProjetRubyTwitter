@@ -1,9 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyTwitterProject</title>
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'home.css' %>
+    <%= stylesheet_link_tag 'menuLayout.css' %>
   </head>
   <body>
+  <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
+    <div class="left-layout">
+      <% if current_user.present?%>
+        <%= render "layouts/menuLayout" %>
+      <% end %>
+    </div>
+   
+    
+    <main>
+      <nav>
+          <div>
+              <h1>Accueil</h1>
+              <%= image_tag 'popular_tweet.png', :class => 'popular-tweet hover-effect' %>
+          </div>
+      </nav>
+
+      <div>
+          <%= form_with url: "/tweets", method: :post do |form| %>
+            <div class="create-tweet-header">
+                <%= image_tag 'test_tweet_profile.png', :class => 'profile-picture' %>
+                <%= form.text_area 'content', placeholder: 'Quoi de neuf ?', maxLength: '280' %>
+            </div>
+            <div class="create-tweet-footer">
+              <%= form.submit "Tweeter", class: 'submit-tweet'  %>
+            </div>
+          <% end %>
+      </div>
+
+      <div class="post">
+            <div class="post-sidebar"> 
+                <%= image_tag 'test_tweet_profile.png', :class => 'profile-picture' %>
+            </div>
+            <div class="post-body">
+                <div class="post-header">
+                    <div class="post-name">
+                        <h2 class="header-title">Title</h2>
+                        <p class="author-tag">@Title</p>
+                        <%= image_tag 'dots.png', :class => 'header-menu hover-effect' %>
+                    </div>
+                    <p class="post-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an   unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+
+                <div class="post-content">
+                <%= image_tag 'test-tweet-content-picture.jpeg', width: 25, :class => 'content-image' %>
+                </div>
+
+                <div class="post-footer">
+                <%= image_tag 'comment.png', width: 25, :class => 'hover-effect' %>
+                <%= image_tag 'retweet.png', width: 25, :class => 'hover-effect' %>
+                <%= image_tag 'like.png', width: 25, :class => 'hover-effect' %>
+                <%= image_tag 'share.png', width: 25, :class => 'hover-effect' %>
+                </div>
+            </div>
+        </div>
+
+        <% @tweets.each do |tweet| %>
+
+        <% end %>
+    </main>
+
+    <div style="width: 200px;"></div>
+
   </body>
 </html>

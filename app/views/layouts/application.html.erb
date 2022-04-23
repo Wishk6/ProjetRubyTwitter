@@ -7,7 +7,6 @@
   </head>
   <body>
     <% if current_user.present?%>
-      <%= render "layouts/menuLayout" %> 
     <% else %>
       <%= link_to "M'enregistrer", new_user_session_path %>
     <% end %>
