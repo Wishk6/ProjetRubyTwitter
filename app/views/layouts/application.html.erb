@@ -3,12 +3,10 @@
   <head>
     <title>RubyTwitterProject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= stylesheet_link_tag "menuLayout.css" %>
+    <%= stylesheet_link_tag "application.css" %>
   </head>
   <body>
-  <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
     <% if current_user.present?%>
-      <%= link_to "Profil", href="/users/sign_in" %>
       <%= render "layouts/menuLayout" %> 
     <% else %>
       <%= link_to "M'enregistrer", new_user_session_path %>
