@@ -11,6 +11,7 @@
     <div class="left-layout">
       <% if current_user.present?%>
         <%= render "layouts/menuLayout" %>
+        
       <% end %>
     </div>
    
@@ -69,7 +70,7 @@
         <% end %>
     </main>
 
-    <div style="width: 200px;"></div>
+    <%= render "layouts/trendsLayout" %>
 
   </body>
 </html>
