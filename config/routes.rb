@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "routes#home"
   get '/tweet/:id', to: 'tweets#show'
-
+  get '/profile', to: 'routes#profile'
   post 'tweets', to: 'tweets#create'
 end
