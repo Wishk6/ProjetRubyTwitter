@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{background: black;}
+
+body{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+
+main{
+    border-left: 1px rgb(47, 51, 54) solid;
+    border-right: 1px rgb(47, 51, 54) solid;
+    width: 500px;
+    margin-top: 50px;
+}
+
+nav{
+    position: fixed;
+    width: inherit;
+    top: 0;
+    background: black;
+    margin: -1px;
+    border-left: 1px rgb(47, 51, 54) solid;
+    border-right: 1px rgb(47, 51, 54) solid;
+    border-bottom: 1px rgb(47, 51, 54) solid;
+}
+nav > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+}
+
+.popular-tweet{
+    width: 30px;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.create-tweet-header{
+    padding-right: 20px;
+    padding-top: 20px;
+    display: flex;
+}
+.create-tweet-header > div {
+    padding: 0 20px;
+}
+.create-tweet-header textarea{
+    background: black;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    height: 120px;
+    width: 100%;
+    font-weight: 400;
+}
+.create-tweet-header textarea:focus{outline: none;}
+.create-tweet-footer{
+    padding: 10px 20px;
+    border-bottom: rgb(47, 51, 54) 1px solid;
+    display: flex;
+    justify-content: right;
+}
+
+.submit-tweet{
+    background: #1D9BF0;
+    border-radius: 40px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.submit-tweet:hover{
+    background: #1A8CD8;
+    transition: all 0.3s;
+}
+
+.profile-picture{
+    width: 50px;
+    border-radius: 100%;
+    height: 50px;
+    padding: 0 15px;
+}
+
+.hover-effect{
+    padding: 5px;
+    border-radius: 100%;
+    transition: .3s all;
+}
+.hover-effect:hover{
+    background: rgba(239, 243, 244, 0.1);
+    transition: .3s all;
+}
+
+
+.post
+{
+    display:flex;
+    width: inherit;
+    border-bottom: 1px solid rgb(47, 51, 54);
+    min-height: 150px;
+    padding-top: 10px;
+}
+.post-content
+{
+    width:95%;
+    align-items: center;
+    display:flex;
+}
+.post-text
+{
+    margin-bottom: 10px;
+}
+.header-menu
+{
+    margin-left: auto;
+}
+.post-name
+{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.author-tag
+{
+    color: rgb(88, 91, 94);
+    margin-left: 5px;
+}
+
+.content-image
+{
+    border-radius: 20px;
+    border: 1pt solid;
+    border-color: rgb(47, 51, 54);
+    width:100%;
+    margin: auto;
+}
+
+.post-header
+{
+    width:95%
+}
+
+.post-footer
+{
+    max-width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 15%;
+}

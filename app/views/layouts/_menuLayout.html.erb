@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= javascript_include_tag('_menuLayout.js') %>
+       <%= stylesheet_link_tag "menuLayout.css" %>
+  </head>
+  <body>
+   
+    <div class="menu">
+      
+      <div class="logo">
+        <%= image_tag 'logo.png', width: 30, height: 25 %>
+      </div>
+     
+      <div class="menuLign">
+        <%= image_tag 'home.png', width: 25, height: 25 %>
+        <div class="menuText">Home</div>
+      </div>
+     
+      <div class="menuLign">
+        <%= image_tag 'hashtag.png', width: 25, height: 25 %>
+        <div class="menuText">Explore</div>
+      </div>
+     
+      <div class="menuLign">
+        <%= image_tag 'notification.png', width: 25, height: 25 %>
+        <div class="menuText">Notifications</div>
+      </div>
+     
+      <div class="menuLign">
+        <%= image_tag 'profile.png', width: 25, height: 25 %>
+        <div class="menuText">Profile</div>
+      </div>
+     
+      <div class="tweetBtn">
+        <div class="menuText">
+          Tweet
+        </div>
+      </div>
+     
+      
+       <%= button_to "Log out", destroy_user_session_path, method: :delete, class:'logoutBtnHidden', id: 'lgtBtn' %>
+      <div class="profileWrapper" onclick="logoutPopUp()">
+           
+
+        <%= image_tag 'profile.png', width: 40, height: 40 %>
+       
+        <div class="idWrapper">
+          
+          <div class="name">
+            <%# <%= current_user.email %>
+            Pseudo
+          </div>
+          
+          <div class="pseudo">
+            @Pseudo 
+          </div>
+       
+        </div>
+        
+        <div class="dots">
+          <%= image_tag 'dots.png' %>
+        </div>
+     
+      </div>
+    
+    </div>
+
+  </body>
+</html>

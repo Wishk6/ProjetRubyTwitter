@@ -6,25 +6,22 @@
     <%= stylesheet_link_tag "application.css" %>
   </head>
   <body>
-  <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
     <% if current_user.present?%>
-      <%= link_to "Profil", href="/users/sign_in" %>
     <% else %>
       <%= link_to "M'enregistrer", new_user_session_path %>
     <% end %>
    
+    
     <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
     
-    <li><%= current_user.email %></li>
-    
-    <h1>/app/views/layouts/app.html.erb</h1>
+    <%# <h1>/app/views/layouts/app.html.erb</h1> %>
    
-    <h2 class="test"> Tweets: <%= @msg %> </h2>
+    <%# <h2> Tweets: <%= @msg %> </h2> 
     
     <%= yield %>
-  
+
   </body>
 </html>

@@ -1,0 +1,133 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0 0 0;
+}
+
+.logo {
+    margin-left: 11px;
+    margin-bottom: 15px;
+}
+
+.menuLign {
+    font-size: 18px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 100px;
+    transition: background 0.2s ease;
+}
+
+.menuLign:hover {
+    background: rgb(38, 38, 38);
+    cursor: pointer;
+}
+
+.tweetBtn {
+    width: 225px;
+    display: flex;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #1d9bf0;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.tweetBtn:hover {
+    background-color: #1a8cd8;
+    cursor: pointer;
+}
+
+.profileWrapper {
+    display: flex;
+    justify-content: space-around;
+    bottom: 40px;
+    position: fixed;
+    gap: 13px;
+    border-radius: 100px;
+    width: 251px;
+    height: 64px;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.profileWrapper:hover {
+    background: rgb(38, 38, 38);
+    cursor: pointer;
+}
+
+.logoutBtnHidden {
+    transition:  opacity 0.3s ease-in;
+    position: fixed;
+    bottom: 0px;
+    opacity: 0;
+    position: relative;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color : white;
+    background-color: #000000;
+    border: solid 1px white;
+}
+
+.button_to {
+    position: absolute;
+    bottom: 125px;
+    margin: 0 auto 0 5.5rem;
+}
+
+.logoutBtn {
+    transition:  opacity 0.3s ease-in;
+    position: fixed;
+    bottom: 0px;
+    opacity: 1;
+    position: relative;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color : white;
+    background-color: #000000;
+    border: solid 1px white;
+}
+
+.name {
+    margin-left: -3rem;
+}
+
+.pseudo {
+    margin-left: -3rem;
+    color: grey;
+}
+
+@media screen and (max-width:1300px) {
+
+    .menuText {
+        display: none;
+    }
+
+    .tweetBtn {
+        width: 50px;
+        margin-left: -3px;
+    }
+
+    .profileWrapper {
+        width: 64px;
+    }
+
+    .idWrapper {
+        display: none;
+    }
+
+    .dots {
+        display: none;
+    }
+
+    .button_to {
+        margin:0 auto 0 -0.3rem;
+    }
+}
