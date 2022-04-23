@@ -10,12 +10,10 @@
   <%# faire un layout pour chaque page, ici page de gaëtan/cyril je crois ?%>
     <div class="left-layout">
       <% if current_user.present?%>
-        <%= render "layouts/menuLayout" %>
-        
+        <%= render "layouts/menuLayout" %>   
       <% end %>
     </div>
    
-    
     <main>
       <nav>
           <div>
@@ -66,11 +64,14 @@
         </div>
 
         <% @tweets.each do |tweet| %>
-
         <% end %>
+
     </main>
 
-    <%= render "layouts/trendsLayout" %>
+    <% if current_user.present?%>
+      <%= render "layouts/trendsLayout" %>
+    <% end %>
 
   </body>
+
 </html>
