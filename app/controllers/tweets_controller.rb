@@ -21,7 +21,9 @@ class TweetsController < ApplicationController
 
   # POST /tweets or /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    @params = Tweet.new
+    @params = {:content => params['content'], :user_id => current_user.id}
+    @tweet = Tweet.new(@params)
 
     respond_to do |format|
       if @tweet.save
@@ -65,6 +67,6 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:content, :user_id, :timestamp)
+      params.require(:tweet).permit(:content, current_user.user_id, Time.now)
     end
 end
