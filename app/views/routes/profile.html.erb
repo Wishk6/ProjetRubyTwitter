@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RubyTwitterProject</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "profile.css" %>
+  </head>
+  <body>
+    <div class="main-content">
+        <div class="random-content">
+            <div class="header-profile">
+                 <%= image_tag 'back_arrow.png' %>
+                <%= @user.userName %>
+            </div>
+
+        </div>
+        <div class="profile-content">
+            <div style="margin: 0px 15px; width: 100%;">
+                <div class="header-profile">
+                 <%= image_tag 'back_arrow.png' %>
+                   
+                </div>
+                <div class="profile-info">
+                    <div class="principal-info">
+                    <div class="profile-photo">
+                        <%= image_tag 'test_pp.png', width:200, height:200 %>
+                        </div>
+                        <div>
+                        <h1 class="username">
+                            <%= @user.userName %> username
+                        </h1>
+                        <p class="profile-description">
+                        <%=  %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 
+                      </p>
+                    </div>
+                    </div>
+                    
+                    <div class="follow-info">
+                        <div class="tweets">
+                        <b>
+                            <%=  %> 10
+                        </b>
+                        <span>Tweets</span>
+                        </div>
+                        <div class="followers">
+                        <b>
+                            <%=  %> 10
+                        </b>
+                        <span>Followers</span>
+                        </div>
+                    <div class="following">
+                        <b>
+                            <%=  %> 10
+                        </b>
+                        <span>Following</span>
+                        </div>
+                    </div>
+                    <div style="border: solid grey; border-width: 0.5px; margin: 0px -15px;"></div>
+                    <div class="tweets">
+                        <%=  %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="random-content">
+            <div class="header-profile">
+                <img src="outline_arrow_back_white_36dp.png" alt="arrow_back" style="margin-right: 1rem;">
+                <%= @user.userName %>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
