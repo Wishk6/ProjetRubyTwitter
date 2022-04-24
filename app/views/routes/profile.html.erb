@@ -56,7 +56,9 @@
                 </div>
             </div>
         </div>
-        <%= render "layouts/menuLayout" %>
+        <% if current_user.present?%>
+      <%= render "layouts/trendsLayout" %>
+    <% end %>
     </div>
     <div class="modal-container-profile" id="modal-container-profile">
       <div class="modal-profile">
@@ -86,6 +88,7 @@
       </div>
       </div>
     </div>
+    
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
@@ -109,6 +112,6 @@
   }
   $("#imageUpload").change(function() {
     readURL(this);
-});
+  });
 </script>
 </html>
