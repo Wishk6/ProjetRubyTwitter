@@ -1,34 +1,79 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<html>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <%= stylesheet_link_tag "signUp.css" %>
+</head>
 
-   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :userName, autofocus: true, autocomplete: "Username" %>
-  </div>
+<body>
+    <div class="limiterSignUp">
+        <div class="mainSignUp">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+            <div class="half1SignUp">
+               <%= image_tag 'login2.png' %>
+            </div>
+            <div class="half2SignUp">
+              <div class = "titleSignUp" > Sign up</div>
+              <div class = "subTitleSignUp" > Enter your Informations</div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+              <div class="field input-container ic1">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "inputSignUp" %>
+                <%= f.label :email, :class => "placeholderSignUp" %><br />
+              </div>
+              <div class= "cut"></div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+              <div class="field input-container ic2">
+                <%= f.text_field :userName, autofocus: true, autocomplete: "userName", :class => "inputSignUp" %>
+                <%= f.label :userName, :class => "placeholderSignUp" %><br />
+              </div>
+              <div class= "cut"></div>
 
-<%= render "devise/shared/links" %>
+              <div class="field input-container ic2">
+                <%= f.text_field :firstName, autofocus: true, autocomplete: "firstName", :class => "inputSignUp" %>
+                <%= f.label :firstName, :class => "placeholderSignUp" %><br />
+              </div>
+              <div class= "cut"></div>
+
+              <div class="field input-container ic2">
+                <%= f.text_field :lastName, autofocus: true, autocomplete: "lastName", :class => "inputSignUp" %>
+                <%= f.label :lastName, :class => "placeholderSignUp" %><br />
+              </div>
+              <div class= "cut"></div>
+
+              <div class="field input-container ic2">
+                <%= f.password_field :password, autocomplete: "new-password", :class => "inputSignUp" %>
+                <%= f.label :password, :class => "placeholderSignUp" %>
+              </div>
+              <div class= "cut"></div>
+
+              <div class="field input-container ic2">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "inputSignUp" %>
+                <%= f.label :password_confirmation, :class => "placeholderSignUp" %><br />
+              </div>
+              <div class= "cut cut-short"></div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", :class => "submit" %>
+              </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+                                 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="" async defer></script>
+</body>
+
+</html>
