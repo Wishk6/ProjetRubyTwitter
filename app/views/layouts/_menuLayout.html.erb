@@ -10,35 +10,50 @@
     <div class="menu">
       
       <div class="logo">
-        <%= image_tag 'logo.png', width: 30, height: 25 %>
+        <%= image_tag 'logo.png', width: 30, height: 25,href: "#" %>
       </div>
      
-      <div class="menuLign">
+      <a class="menuLign" href="#">
         <%= image_tag 'home.png', width: 25, height: 25 %>
         <div class="menuText">Home</div>
-      </div>
+      </a>
      
-      <div class="menuLign">
+      <div class="menuLign" href="#">
         <%= image_tag 'hashtag.png', width: 25, height: 25 %>
         <div class="menuText">Explore</div>
       </div>
      
-      <div class="menuLign">
+      <div class="menuLign" href="#">
         <%= image_tag 'notification.png', width: 25, height: 25 %>
         <div class="menuText">Notifications</div>
       </div>
      
-      <div class="menuLign">
+      <div class="menuLign" href="profile">
         <%= image_tag 'profile.png', width: 25, height: 25 %>
         <div class="menuText">Profile</div>
       </div>
      
-      <div class="tweetBtn">
+      <div class="tweetBtn" onclick="openModal()">
         <div class="menuText">
           Tweet
         </div>
       </div>
      
+      <div class="modal" id="modal">
+        <div class="modalContent">
+          <span onclick="closeModal()" class="closeBtn"> X
+          </span>
+            <%= form_with url: "/tweets", method: :post do |form| %>
+              <div class="create-tweet-header">
+                <%= image_tag 'test_tweet_profile.png', :class => 'profile-picture' %>
+                <%= form.text_area 'content', placeholder: 'Quoi de neuf ?', maxLength: '280' %>
+              </div>
+              <div class="create-tweet-footer">
+                <%= form.submit "Tweeter", class: 'submit-tweet'  %>
+              </div>
+            <% end %>
+        </div>
+      </div>
       
        <%= button_to "Log out", destroy_user_session_path, method: :delete, class:'logoutBtnHidden', id: 'lgtBtn' %>
       <div class="profileWrapper" onclick="logoutPopUp()">
