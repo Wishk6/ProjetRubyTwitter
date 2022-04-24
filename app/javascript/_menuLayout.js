@@ -9,3 +9,20 @@ function logoutPopUp() { /* toggle logoutBtn */
         lgtBtn.classList.add("logoutBtnHidden");
     }
 }
+
+function openModal() {
+    let modal = document.getElementById('modal');
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    let modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById('modal');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
