@@ -58,8 +58,8 @@
         </div>
         <%= render "layouts/menuLayout" %>
     </div>
-    <div class="modal-container" id="modal-container">
-      <div class="modal">
+    <div class="modal-container-profile" id="modal-container-profile">
+      <div class="modal-profile">
         <div class="modal-header">
           <%= image_tag 'cross.png', class: "imgbtn", id: "closeModal"  %>
           <h1>Edit profile</h1>
@@ -91,10 +91,10 @@
 <script>
   document.getElementById('closeModal').addEventListener("click", hideModal)
   function displayModal() {
-    document.getElementById('modal-container').style.display = 'flex';
+    document.getElementById('modal-container-profile').style.display = 'flex';
   }
   function hideModal() {
-    document.getElementById('modal-container').style.display = 'none';
+    document.getElementById('modal-container-profile').style.display = 'none';
   }
   function readURL(input) {
     if (input.files && input.files[0]) {
