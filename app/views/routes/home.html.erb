@@ -45,8 +45,8 @@
                 <div class="post-body">
                     <div class="post-header">
                         <div class="post-name">
-                            <h2 class="header-title">FirstName & LastName <%= User.all.where(id: tweet[:user_id])[0][:userName] %> </h2>
-                            <p class="author-tag">@Username <%= User.all.where(id: tweet[:user_id])[0][:userName] %></p>
+                            <h2 class="header-title"><%= User.all.where(id: tweet[:user_id])[0][:userName] %></h2>
+                            <p class="author-tag"><%= User.all.where(id: tweet[:user_id])[0][:userName] %></p>
                             <%= image_tag 'dots.png', :class => 'header-menu hover-effect' %>
                         </div>
                         <p class="post-text">

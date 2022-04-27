@@ -1,8 +1,8 @@
 class RoutesController < ApplicationController
     def home
-        @tweets = Tweet.all
+        @tweets = Tweet.all.reverse
     end
     def profile
-        @tweets = Tweet.all
+        @tweets = Tweet.all.reverse
     end
 end
