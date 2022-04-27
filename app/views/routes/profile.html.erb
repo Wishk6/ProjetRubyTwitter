@@ -4,6 +4,7 @@
     <title>RubyTwitterProject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag "profile.css" %>
+    <%= stylesheet_link_tag "home.css" %>
   </head>
   <body>
     <%= render "layouts/menuLayout" %>
@@ -12,7 +13,7 @@
             <div class="header-profile">
 
               <%= image_tag 'back_arrow.png', class: "imgbtn"  %>
-                <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()"'>
+              <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()"'>
             </div>
             <div class="profile-info">
               <div class="principal-info">
