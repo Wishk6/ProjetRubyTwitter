@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
 
   # POST /tweets or /tweets.json
   def create
-    @params = Tweet.new
+    #@params = Tweet.new
     @params = {:content => params['content'], :user_id => current_user.id}
     @tweet = Tweet.new(@params)
 

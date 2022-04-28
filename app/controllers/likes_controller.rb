@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_like, only: %i[ show edit update destroy ]
+  before_action :set_like, only: %i[ show edit update  ]
 
   # GET /likes or /likes.json
   # def index
@@ -21,11 +21,18 @@ class LikesController < ApplicationController
 
   # POST /likes or /likes.json
   def create
-    @like = Like.new(like_params)
+    if Like.where(user_id: params['user_id'].to_i).count > 0
+      redirect_to '/like/' + Like.all.where(user_id: params['user_id'].to_i).first[:id].to_s
+      return
+    end
+
+    @like = Like.new(:user_id => params['user_id'].to_i, :user_id => params['tweet_id'].to_i)
+    @like[:user_id] = params['user_id'].to_i
+    @like[:tweet_id] = params['tweet_id'].to_i
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to like_url(@like), notice: "Like was successfully created." }
+        format.html { redirect_to '/', notice: "" }
         format.json { render :show, status: :created, location: @like }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +48,7 @@ class LikesController < ApplicationController
         format.html { redirect_to like_url(@like), notice: "Like was successfully updated." }
         format.json { render :show, status: :ok, location: @like }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :update, status: :unprocessable_entity }
         format.json { render json: @like.errors, status: :unprocessable_entity }
       end
     end
@@ -49,10 +56,10 @@ class LikesController < ApplicationController
 
   # DELETE /likes/1 or /likes/1.json
   def destroy
-    @like.destroy
+    Like.find(params['id']).destroy
 
     respond_to do |format|
-      format.html { redirect_to likes_url, notice: "Like was successfully destroyed." }
+      format.html { redirect_to '/', notice: "" }
       format.json { head :no_content }
     end
   end
