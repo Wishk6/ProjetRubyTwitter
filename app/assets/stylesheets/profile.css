@@ -54,6 +54,7 @@ input:hover {
     border-left: solid grey;
     border-right: solid grey;
     border-width: 1px;
+    height: fit-content;
 }
 
 .header-profile {
@@ -63,6 +64,17 @@ input:hover {
     margin: 0px -15px;
     justify-content: space-between;
 }
+
+
+.followed-profile {
+    background: #1D9BF0;
+}
+
+.followed-profile:hover {
+    background-color: #1a8cd8;
+    cursor: pointer;
+}
+
 
 .principal-info {
     display: flex;

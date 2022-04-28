@@ -11,10 +11,10 @@
         <div class="profile-content">
           <div style="margin: 0px 15px; width: 100%;">
             <div class="header-profile">
-
-              <%= image_tag 'back_arrow.png', class: "imgbtn"  %>
-              <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()"'>
-            </div>
+              <%= image_tag('back_arrow.png', :onclick => "history.back()".html_safe, :class => "imgbtn")  %>
+              <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
+              <input type="button" class="follow-profile" value="Follow" id="follow-button" onclick="followButton()">
+            </div> 
             <div class="profile-info">
               <div class="principal-info">
                 <div class="profile-photo">
@@ -25,7 +25,8 @@
                     <%= current_user.userName %> Adelin
                   </h1>
                   <p class="profile-description">
-                    <%=  %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 
+                 
+                     <%= current_user.description %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 
                   </p>
                 </div>
                 </div>
@@ -80,16 +81,15 @@
             </div>
         </div>
     </div>
-        <div style="display: flex; justify-content: space-evenly; padding-top: 10px;">
-          <input type="text" id="username" placeholder="<%= current_user.userName %> Adé">
-        </div>
-        <div style="display: flex; justify-content: space-evenly; padding-top: 10px;">
-          <input type="text" id="description" placeholder="Description">
-        </div>
+    <%= form_for :user do |f| %>
+     <%= f.text_field :first_name %><br />
+      <%= f.text_field :last_name %><br />
+      <%= f.text_field :biography %><br />
+      <%= f.submit %>
+    <% end %>
       </div>
       </div>
     </div>
-    
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
@@ -99,6 +99,16 @@
   }
   function hideModal() {
     document.getElementById('modal-container-profile').style.display = 'none';
+  }
+  function followButton() {
+    let follow = document.getElementById('follow-button')
+    if (follow.value == 'Follow'){
+      follow.value = "Followed"
+      follow.className = 'followed-profile'
+    } else if (follow.value == 'Followed' ){
+      follow.value = "Follow"
+      follow.className = 'follow-profile'
+    }
   }
   function readURL(input) {
     if (input.files && input.files[0]) {
