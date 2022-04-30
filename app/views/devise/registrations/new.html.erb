@@ -19,44 +19,44 @@
                <%= image_tag 'login2.png' %>
             </div>
             <div class="half2SignUp">
-              <div class = "titleSignUp" > Sign up</div>
+              <div class = "titleSignUp" > SIGN UP</div>
               <div class = "subTitleSignUp" > Enter your Informations</div>
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
 
               <div class="field input-container ic1">
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "inputSignUp" %>
-                <%= f.label :email, :class => "placeholderSignUp" %><br />
+                <%= f.email_field :email, autofocus: true, placeholder:"email", autocomplete: "email", :class => "inputSignUp" %>
+                <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.text_field :userName, autofocus: true, autocomplete: "userName", :class => "inputSignUp" %>
-                <%= f.label :userName, :class => "placeholderSignUp" %><br />
+                <%= f.text_field :userName, autofocus: true,placeholder:"username", autocomplete: "userName", :class => "inputSignUp" %>
+              <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.text_field :firstName, autofocus: true, autocomplete: "firstName", :class => "inputSignUp" %>
-                <%= f.label :firstName, :class => "placeholderSignUp" %><br />
+                <%= f.text_field :firstName, autofocus: true,placeholder:"first name", autocomplete: "firstName", :class => "inputSignUp" %>
+               <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.text_field :lastName, autofocus: true, autocomplete: "lastName", :class => "inputSignUp" %>
-                <%= f.label :lastName, :class => "placeholderSignUp" %><br />
+                <%= f.text_field :lastName, autofocus: true,placeholder:"last name", autocomplete: "lastName", :class => "inputSignUp" %>
+                <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.password_field :password, autocomplete: "new-password", :class => "inputSignUp" %>
-                <%= f.label :password, :class => "placeholderSignUp" %>
+                <%= f.password_field :password,placeholder:"password", autocomplete: "new-password", :class => "inputSignUp" %>
+                
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "inputSignUp" %>
-                <%= f.label :password_confirmation, :class => "placeholderSignUp" %><br />
+                <%= f.password_field :password_confirmation,placeholder:"comfirm password", autocomplete: "new-password", :class => "inputSignUp" %>
+               <br />
               </div>
               <div class= "cut cut-short"></div>
 
@@ -65,7 +65,7 @@
               </div>
               <% end %>
 
-              <%= render "devise/shared/links" %>
+             
                                  
                 </div>
             </div>
