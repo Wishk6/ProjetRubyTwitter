@@ -1,9 +1,14 @@
 body {
     align-items: center;
-    background-color: #000;
+    
     display: flex;
     justify-content: center;
     height: 100vh;
+    background-image:url('login.jpeg');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-size: 100%;
+    background-position:center;
     }
 
     .limiterSignUp{
@@ -13,9 +18,7 @@ body {
         display: flex;
         flex-direction:row ;
     }
-    .half1SignUp{
     
-    }
     .form {
     margin-left:auto ;
     margin-right: auto;  
@@ -25,7 +28,6 @@ body {
     box-sizing: border-box;
     height: fit-content;
     padding: 20px;
-    width: 23%;
     display: flex;
     flex-direction: column;
     align-items: center;

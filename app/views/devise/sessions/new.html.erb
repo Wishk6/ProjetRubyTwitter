@@ -15,9 +15,7 @@
     <div class="limiterSignUp">
         <div class="mainSignUp">
 
-            <div class="form half1SignUp">
-               <%= image_tag 'login3.png' %>
-               
+            <div class="form half1SignUp">               
               <div class = "titleSignUp" > SIGN UP</div>
               <div class = "subTitleSignUp" > Enter your Informations</div>
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -70,7 +68,7 @@
               <div class = "subTitleSignUp" > Enter your Informations</div>
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               
-              <div class="fieldinput-container ic1">
+              <div class="field input-container ic2">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email",:class => "inputSignUp",placeholder:"Email"  %>
               </div>
               <div class= "cut"></div>
