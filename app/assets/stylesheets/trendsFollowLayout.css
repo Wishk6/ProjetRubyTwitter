@@ -1,6 +1,6 @@
 .trendsLayout {
     border: 1px solid rgb(20, 22, 23);
-    margin-top:50px;
+    margin-top: 50px;
     border-radius: 10px;
     display: flex;
     width: 350px;
@@ -40,6 +40,10 @@
     color: grey;
 }
 
+.followSpeData {
+    font-size: inherit;
+}
+
 .trendsName {
     font-weight: bold;
 }
@@ -49,16 +53,30 @@
     margin-right: 8px;
 }
 
-.followBtn { 
+.followBtn {
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0 16px;
+    color: #16181c;
+    font-weight: bold;
     background-color: #eff3f4;
-    min-width:32px;
+    margin: 0 10px;
+    min-width: 32px;
+    font-size: 14px;
     min-height: 32px;
-    border-radius:100px;
+    border-radius: 100px;
+    transition: background 0.2s ease;
 }
 
-@media screen and (max-width:1000px) {
-    
+.followBtn:hover {
+
+    background-color: #d1d5d6;
+}
+
+
+@media screen and (max-width:1150px) {
+
     .trendsLayout {
-        display:none;
+        display: none;
     }
 }

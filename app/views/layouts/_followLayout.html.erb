@@ -5,8 +5,9 @@
     <%= stylesheet_link_tag "trendsFollowLayout.css" %>
   </head>
   <body>
+    
     <div class="trendsLayout">
-     
+      
       <div class="title">
         Who to follow
       </div>
@@ -14,24 +15,42 @@
       <div class="trendsFragment">
         
         <div class="fragText">
-        
+          
           <div class="trendsName">
             <%= current_user.pseudo %>
           </div>
          
-          <div class="trendsData">
-           @<%= current_user.userName %>
+          <div class="trendsData followSpeData">
+            @<%= current_user.userName %>
+          </div>
+        
+        </div>
+       
+        <div class="followBtn">
+          Follow
+        </div>
+      
+      </div>
+     
+      <div class="trendsFragment">
+       
+        <div class="fragText">
+         
+          <div class="trendsName">
+            <%= current_user.pseudo %>
+          </div>
+         
+          <div class="trendsData followSpeData">
+            @<%= current_user.userName %>
           </div>
        
         </div>
-      
+       
         <div class="followBtn">
-        Follow
+          Follow
         </div>
      
       </div>
    
-    </div>
-  
-  </body>
-</html>
+    </body>
+  </html>
