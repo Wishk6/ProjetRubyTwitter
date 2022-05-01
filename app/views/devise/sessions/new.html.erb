@@ -28,31 +28,37 @@
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.text_field :userName, autofocus: true,placeholder:"username", autocomplete: "userName", :class => "inputSignUp" %>
+                <%= f.text_field :userName, autofocus: true,placeholder:"@Username", autocomplete: "userName", :class => "inputSignUp" %>
               <br />
               </div>
               <div class= "cut"></div>
 
+               <div class="field input-container ic2">
+              <%= f.text_field :pseudo, autofocus: true,placeholder:"Pseudo", autocomplete: "Pseudo", :class => "inputSignUp" %>
+              <br />
+            </div>
+            <div class= "cut"></div>
+
               <div class="field input-container ic2">
-                <%= f.text_field :firstName, autofocus: true,placeholder:"first name", autocomplete: "firstName", :class => "inputSignUp" %>
+                <%= f.text_field :firstName, autofocus: true,placeholder:"First name", autocomplete: "firstName", :class => "inputSignUp" %>
                <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.text_field :lastName, autofocus: true,placeholder:"last name", autocomplete: "lastName", :class => "inputSignUp" %>
+                <%= f.text_field :lastName, autofocus: true,placeholder:"Last name", autocomplete: "lastName", :class => "inputSignUp" %>
                 <br />
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.password_field :password,placeholder:"password", autocomplete: "new-password", :class => "inputSignUp" %>
+                <%= f.password_field :password,placeholder:"Password", autocomplete: "new-password", :class => "inputSignUp" %>
                 
               </div>
               <div class= "cut"></div>
 
               <div class="field input-container ic2">
-                <%= f.password_field :password_confirmation,placeholder:"comfirm password", autocomplete: "new-password", :class => "inputSignUp" %>
+                <%= f.password_field :password_confirmation,placeholder:"Comfirm password", autocomplete: "new-password", :class => "inputSignUp" %>
                <br />
               </div>
               <div class= "cut cut-short"></div>

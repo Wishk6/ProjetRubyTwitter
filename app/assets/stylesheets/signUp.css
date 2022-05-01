@@ -1,27 +1,30 @@
 body {
     align-items: center;
-    
     display: flex;
     justify-content: center;
     height: 100vh;
-    background-image:url('login.jpeg');
-    background-repeat:no-repeat;
-    background-size:contain;
+    background-image: url('login.jpeg');
+    background-repeat: no-repeat;
     background-size: 100%;
-    background-position:center;
-    }
+    background-position: center;
+}
 
-    .limiterSignUp{
-        width: 100%;
-    }
-    .mainSignUp{
-        display: flex;
-        flex-direction:row ;
-    }
-    
-    .form {
-    margin-left:auto ;
-    margin-right: auto;  
+.limiterSignUp {
+    width: 100%;
+}
+
+.mainSignUp {
+    display: flex;
+    flex-direction: row;
+    margin: 100px 0 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
     min-height: 500px;
     background-color: #15172b;
     border-radius: 20px;
@@ -31,35 +34,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    }
-    .titleSignUp {
+
+}
+
+.titleSignUp {
     color: #eee;
     font-family: sans-serif;
     font-size: 53px;
     font-weight: 300;
-    margin-top: 30px;
-    }
-    .subtitleSignUp {
+}
+
+.subtitleSignUp {
     color: #eee;
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 600;
     margin-top: 25px;
-    }
-    .input-container {
+}
+
+.input-container {
     height: 50px;
     position: relative;
     width: 100%;
     min-width: 380px;
-    }
-    .ic1 {
+}
+
+.ic1 {
     margin-top: 40px;
-    }
-    .ic2 {
+}
+
+.ic2 {
     margin-top: 30px;
-    }
-    .inputSignUp {
+}
+
+.inputSignUp {
     background-color: #303245;
     border-radius: 12px;
     border: 0;
@@ -70,8 +78,9 @@ body {
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
-    }
-    .cut {
+}
+
+.cut {
     background-color: #15172b;
     border-radius: 10px;
     height: 20px;
@@ -81,11 +90,13 @@ body {
     transform: translateY(0);
     transition: transform 200ms;
     width: 76px;
-    }
-    .cut-short {
+}
+
+.cut-short {
     width: 50px;
-    }
-    .submit {
+}
+
+.submit {
     background-color: #08d;
     border-radius: 12px;
     border: 0;
@@ -98,15 +109,16 @@ body {
     outline: 0;
     text-align: center;
     width: 100%;
-    }
-    .submit:active {
-    background-color: #06b;
-    }
+}
 
-    img{
-        inset: 0px;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        z-index: -1;
-    }
+.submit:active {
+    background-color: #06b;
+}
+
+img {
+    inset: 0px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}

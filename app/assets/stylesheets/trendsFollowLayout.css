@@ -6,6 +6,7 @@
     width: 350px;
     flex-direction: column;
     background-color: #16181c;
+    overflow: hidden;
 }
 
 .title {
@@ -39,11 +40,21 @@
     color: grey;
 }
 
+.trendsName {
+    font-weight: bold;
+}
+
 .dotImgTrends {
     opacity: 0.6;
     margin-right: 8px;
 }
 
+.followBtn { 
+    background-color: #eff3f4;
+    min-width:32px;
+    min-height: 32px;
+    border-radius:100px;
+}
 
 @media screen and (max-width:1000px) {
     
