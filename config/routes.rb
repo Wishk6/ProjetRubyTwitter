@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "routes#home"
   get '/tweet/:id', to: 'tweets#show'
   get '/profile', to: 'routes#profile'
+  get '/explore', to: 'routes#explore'
   post '/tweets', to: 'tweets#create'
   post '/like', to: 'likes#create'
   get '/like/:id', to: 'likes#destroy'

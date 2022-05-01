@@ -158,9 +158,3 @@ nav > div {
     justify-content: space-between;
     margin-right: 15%;
 }
-
-.rightLayoutWrapper {
-
-    display: flex;
-    flex-direction: column;
-}
