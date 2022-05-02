@@ -58,6 +58,7 @@ input:hover {
 }
 
 .header-profile {
+    padding: 0px 2%;
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
@@ -65,12 +66,11 @@ input:hover {
     justify-content: space-between;
 }
 
-
-.followed-profile {
+.follow-profile {
     background: #1D9BF0;
 }
 
-.followed-profile:hover {
+.follow-profile:hover {
     background-color: #1a8cd8;
     cursor: pointer;
 }
@@ -80,7 +80,7 @@ input:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .profile-photo {
@@ -129,7 +129,6 @@ input:hover {
 
 .modal-save {
     background-color: #1d9bf0;
-
 }
 
 .modal-save:hover {
@@ -137,21 +136,14 @@ input:hover {
     cursor: pointer;
 }
 
-
-#pfp-modal {
-    margin-bottom: 15px;
+.form-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-#username {
+.text_field {
     margin-bottom: 15px;
-    border: solid grey;
-    width: 100%;
-}
-
-#description {
-    margin-bottom: 5px;
-    border: solid grey;
-    width: 100%
 }
 
 .avatar-upload {

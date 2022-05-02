@@ -25,7 +25,6 @@
                     <%= current_user.userName %> Adelin
                   </h1>
                   <p class="profile-description">
-                 
                      <%= current_user.description %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 
                   </p>
                 </div>
@@ -69,8 +68,9 @@
           <h1>Edit profile</h1>
           <input type="submit" value="Save" class="modal-save" onclick="hideModal()">
         </div>
-        <div style="padding: 20px;">
+      <div style="padding: 20px;">
 
+    <%= form_for :user, :class => "form-profile" do |f| %>
     <div class="avatar-upload">
         <div class="avatar-edit">
             <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
@@ -81,10 +81,9 @@
             </div>
         </div>
     </div>
-    <%= form_for :user do |f| %>
-     <%= f.text_field :first_name %><br />
-      <%= f.text_field :last_name %><br />
-      <%= f.text_field :biography %><br />
+     <%= f.text_field :first_name, :class => "text_field" %><br />
+      <%= f.text_field :last_name, :class => "text_field" %><br />
+      <%= f.text_field :biography, :class => "text_field" %><br />
       <%= f.submit %>
     <% end %>
       </div>
