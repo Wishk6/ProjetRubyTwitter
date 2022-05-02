@@ -6,13 +6,86 @@
     <%= stylesheet_link_tag "explore.css" %>
   </head>
   <body>
-    
+   
     <%= render "layouts/menuLayout" %>
-   <h1>A faire </h1>
+
+
+
+    <div class="exploreLayout">
+
+
+        <div class="title">
+            Trends for you
+        </div>
+       
+        <div class="trendsFragment">
+        
+            <div class="fragText">        
+               
+                <div class="trendsData">
+                    Subject - Trending
+                </div>
+            
+                <div class="trendsName">
+                    TrendsName
+                </div>
+                
+                <div class="trendsData">
+                    45k Tweets
+                </div>
+            </div>
+                
+            <%= image_tag 'dots.png', class: 'dotImgTrends', width: 20, height: 20 %>
+        </div> 
+         <div class="trendsFragment">
+        
+            <div class="fragText">        
+               
+                <div class="trendsData">
+                    Subject - Trending
+                </div>
+            
+                <div class="trendsName">
+                    TrendsName
+                </div>
+                
+                <div class="trendsData">
+                    45k Tweets
+                </div>
+            </div>
+                
+            <%= image_tag 'dots.png', class: 'dotImgTrends', width: 20, height: 20 %>
+        </div> 
+         <div class="trendsFragment">
+        
+            <div class="fragText">        
+               
+                <div class="trendsData">
+                    Subject - Trending
+                </div>
+            
+                <div class="trendsName">
+                    TrendsName
+                </div>
+                
+                <div class="trendsData">
+                    45k Tweets
+                </div>
+            </div>
+                
+            <%= image_tag 'dots.png', class: 'dotImgTrends', width: 20, height: 20 %>
+        </div>        
+
+          Gaetan si tu peux afficher les Tweets ici ( même ceux qui sont pas du user actuel) tu régales !
+     
+      </div>
+      
+
+    
+    
     <div class="rightLayoutWrapper">
       <%= render "layouts/followLayout" %>
     </div>
   
   </body>
-
 </html>

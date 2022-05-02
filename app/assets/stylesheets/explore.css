@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+
+.exploreLayout {
+    display: flex;
+    border: 1px solid rgb(47, 51, 54);
+    padding: 10px;
+    flex-direction: column;
+    max-width: 600px;
+    width:100%;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+}
