@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_073712) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_24_132818) do
   create_table "follows", force: :cascade do |t|
     t.integer "followed_id", null: false
     t.integer "follower_id", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_073712) do
     t.datetime "timestamp", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content_picture"
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
@@ -53,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_073712) do
     t.string "firstName"
     t.string "lastName"
     t.string "userName"
+    t.string "pseudo"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

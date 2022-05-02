@@ -9,7 +9,7 @@
    
     <div class="menu">
       
-      <a class="logo" href="#">
+      <a class="logo" href="/">
         <%= image_tag 'logo.png', width: 30, height: 25 %>
       </a>
      
@@ -64,12 +64,11 @@
         <div class="idWrapper">
           
           <div class="name">
-            <%# <%= current_user.userName %>
-            Pseudo
+          <%= current_user.pseudo %>
           </div>
           
           <div class="pseudo">
-            @Pseudo 
+            @<%= current_user.userName %>
           </div>
        
         </div>

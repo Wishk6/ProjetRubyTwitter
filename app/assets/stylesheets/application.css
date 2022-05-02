@@ -13,3 +13,10 @@ a {
     text-decoration: none;
     color: white;
 }
+
+
+.rightLayoutWrapper {
+
+    display: flex;
+    flex-direction: column;
+}

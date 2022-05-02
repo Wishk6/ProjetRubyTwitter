@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-       <%= stylesheet_link_tag "trendsFollowLayout.css" %>
+    <title>RubyTwitterProject</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "explore.css" %>
   </head>
   <body>
    
+    <%= render "layouts/menuLayout" %>
 
-    <div class="trendsLayout">
+
+
+    <div class="exploreLayout">
+
 
         <div class="title">
             Trends for you
@@ -70,8 +75,17 @@
                 
             <%= image_tag 'dots.png', class: 'dotImgTrends', width: 20, height: 20 %>
         </div>        
+
+          Gaetan si tu peux afficher les Tweets ici ( même ceux qui sont pas du user actuel) tu régales !
      
       </div>
       
+
+    
+    
+    <div class="rightLayoutWrapper">
+      <%= render "layouts/followLayout" %>
+    </div>
+  
   </body>
 </html>
