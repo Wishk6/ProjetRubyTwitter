@@ -26,7 +26,7 @@ class LikesController < ApplicationController
       return
     end
 
-    @like = Like.new(:user_id => params['user_id'].to_i, :user_id => params['tweet_id'].to_i)
+    @like = Like.new(:user_id => params['user_id'].to_i, :tweet_id => params['tweet_id'].to_i)
     @like[:user_id] = params['user_id'].to_i
     @like[:tweet_id] = params['tweet_id'].to_i
 

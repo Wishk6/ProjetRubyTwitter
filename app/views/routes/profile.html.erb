@@ -4,23 +4,25 @@
     <title>RubyTwitterProject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag "profile.css" %>
+    <%= stylesheet_link_tag "home.css" %>
   </head>
   <body>
     <%= render "layouts/menuLayout" %>
+      <main>
+      <nav >
+        <%= image_tag('back_arrow.png', :onclick => "history.back()".html_safe, :class => "imgbtn")  %>
+          <% if current_user.userName == @username %>
+            <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
+          <% else %>
+          <%= form_with url: '/follow', method: :post do |form| %>
+              <%= form.text_field 'username', value: @username, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+              <%= form.submit "Follow", name: "follow-button", id: "follow-button", class: 'follow-button' %>
+            <% end %>
+          <% end %>
+      </nav>
         <div class="profile-content">
           <div style="margin: 0px 15px; width: 100%;">
-            <div class="header-profile">
-              <%= image_tag('back_arrow.png', :onclick => "history.back()".html_safe, :class => "imgbtn")  %>
-              <% if current_user.userName == @username %>
-                <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
-              <% else %>
-                <%= form_with url: '/follow', method: :post do |form| %>
-                  <h1> <%= Follow.count %> </h1>
-                  <%= form.text_field 'username', value: @username, style: 'visibility: hidden; width: 0px; height: 0px;' %>
-                  <%= form.submit "Follow", name: "follow-button", id: "follow-button", class: 'follow-button' %>
-                <% end %>
-              <% end %>
-            </div> 
+            
             <div class="profile-info">
               <div class="principal-info">
                 <div class="profile-photo">
@@ -54,29 +56,27 @@
                       </b>
                       <span>Following</span>
                     </div>
-                    </div>
-                    <div style="border: solid grey; border-width: 0.5px; margin: 0px -15px;">
-                    </div>
-                    <div class="tweets">
-                      <%=  %>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
+        <div class="tweet-area">
+          tweet
+        </div>
+        </main>
         <% if current_user.present?%>
       <%= render "layouts/trendsLayout" %>
     <% end %>
     </div>
-    <div class="modal-container-profile" id="modal-container-profile">
+    <%= form_for :user, :class => "modal-container-profile", :id => "modal-container-profile" do |f| %>
+    
       <div class="modal-profile">
         <div class="modal-header">
           <%= image_tag 'cross.png', class: "imgbtn", id: "closeModal"  %>
           <h1>Edit profile</h1>
-          <input type="submit" value="Save" class="modal-save" onclick="hideModal()">
+          <%= f.submit "Save", :class => "modal-save" %>
         </div>
       <div style="padding: 20px;">
-
-    <%= form_for :user, :class => "form-profile" do |f| %>
     <div class="avatar-upload">
         <div class="avatar-edit">
             <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
@@ -87,13 +87,13 @@
             </div>
         </div>
     </div>
-     <%= f.text_field :first_name, :class => "text_field" %><br />
-      <%= f.text_field :last_name, :class => "text_field" %><br />
-      <%= f.text_field :biography, :class => "text_field" %><br />
-      <%= f.submit %>
+    <div class="form-profile"> 
+      <%= f.text_field :pseudo, :class => "text_field", placeholder:"pseudo", value: current_user.pseudo %><br />
+      <%= f.text_field :biography, :class => "text_field", placeholder: "Description", value: current_user.description %><br />
     <% end %>
-      </div>
-      </div>
+    </div>
+    </div>
+    </div>
     </div>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

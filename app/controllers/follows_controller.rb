@@ -22,15 +22,18 @@ class FollowsController < ApplicationController
   # POST /follows or /follows.json
   def create
     followed = User.where(userName: params['username'])[0]
-    @params = {:followed_id => followed[:id], :follower_id => current_user.id}
-    @follow = Follow.new(@params)
+    @follow = Follow.new
+    @follow[:follower_id] = current_user.id
+    @follow[:followed_id] = followed[:id].to_i
+    logger.info { 'followed: ' }
+    logger.info { @follow[:userName] }
 
     respond_to do |format|
       if @follow.save
-        format.html { redirect_to follow_url(@follow), notice: "Follow was successfully created." }
+        format.html { redirect_to '/' + followed[:userName], notice: "" }
         format.json { render :show, status: :created, location: @follow }
       else
-        format.html { redirect_back fallback_location: '/' + params['username'], status: :unprocessable_entity }
+        format.html { redirect_to '/', notice: "" }
         format.json { render json: @follow.errors, status: :unprocessable_entity }
       end
     end
