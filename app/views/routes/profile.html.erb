@@ -60,7 +60,79 @@
       </div>
     </div>
     <div class="tweet-area">
-      tweet
+      <% @tweets.each do |hash| %>
+
+        <% hash.each do |tweet| %>
+          <div class="post">
+            <div class="post-sidebar"> 
+                <%= image_tag 'test_tweet_profile.png', :class => 'profile-picture' %>
+            </div>
+            <div class="post-body">
+                <div class="post-header">
+                    <div class="post-name">
+                      <h2 class="header-title"><%= User.where(id: tweet[:user_id])[0][:userName] %></h2>
+                      <p class="author-tag">@<%= User.where(id: tweet[:user_id])[0][:userName] %></p> 
+
+                      <%= image_tag 'dots.png', :class => 'header-menu hover-effect' %>
+                    </div>
+                    <p class="post-text">
+                      <%= tweet[:content] %>
+                    </p>
+                </div>
+
+                <div class="post-content">
+                  <%= image_tag 'test-tweet-content-picture.jpeg', width: 25, :class => 'content-image' %>
+                </div>
+
+                <div class="post-footer">
+                  <%= form_with url: '/like', method: :post do |form| %>
+                    <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <label for="submit-comment"  style="display: flex; align-items: center;">
+                      0
+                      <%= image_tag 'comment.png', width: 25, height: 25, :class => 'hover-effect' %>
+                    </label>
+                    <%= form.submit "", name: "submit-comment", id: "submit-comment", style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                  <% end %>
+                  <%= form_with url: '/like', method: :post do |form| %>
+                    <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <label for="submit-retweet" style="display: flex; align-items: center;">
+                      0
+                      <%= image_tag 'retweet.png', width: 25, height: 25, :class => 'hover-effect' %>
+                    </label>
+                    <%= form.submit "", name: "submit-retweet", id: "submit-retweet", style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                  <% end %>
+
+                  <%= form_with url: '/like', method: :post do |form| %>
+                    <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <label for="submit-like"  style="display: flex; align-items: center;">
+                      <%= Like.all.where(tweet_id: tweet[:id]).count %>
+                      <% if Like.all.where(tweet_id: tweet[:id], user_id: current_user.id).count > 0 %>
+                        <%= image_tag 'like_filled.png', width: 25, height: 25, :class => 'hover-effect' %>
+                      <% else %>
+                        <%= image_tag 'like.png', width: 25, height: 25, :class => 'hover-effect' %>
+                      <% end %>
+                    </label>
+                    <%= form.submit "", name: "submit-like", id: "submit-like", style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                  <% end %>
+
+                  <%= form_with url: '/like', method: :post do |form| %>
+                    <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                    <label for="submit-share"  style="display: flex; align-items: center;">
+                      0
+                      <%= image_tag 'share.png', width: 25, height: 25, :class => 'hover-effect' %>
+                    </label>
+                    <%= form.submit "", name: "submit-share", id: "submit-share", style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+        
+      <% end %>
     </div>
   </main>
     <div class="rightLayoutWrapper">
