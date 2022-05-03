@@ -22,9 +22,7 @@ class FollowsController < ApplicationController
   # POST /follows or /follows.json
   def create
     followed = User.where(userName: params['username'])[0]
-    @follow = Follow.new
-    @follow[:follower_id] = current_user.id
-    @follow[:followed_id] = followed[:id].to_i
+    @follow = Follow.new(:followed_id => followed[:id].to_i, :follower_id => current_user.id)
     logger.info { 'followed: ' }
     logger.info { @follow[:userName] }
 
