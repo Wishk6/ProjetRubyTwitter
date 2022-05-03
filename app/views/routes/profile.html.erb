@@ -11,8 +11,15 @@
           <div style="margin: 0px 15px; width: 100%;">
             <div class="header-profile">
               <%= image_tag('back_arrow.png', :onclick => "history.back()".html_safe, :class => "imgbtn")  %>
-              <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
-              <input type="button" class="follow-profile" value="Follow" id="follow-button" onclick="followButton()">
+              <% if current_user.userName == @username %>
+                <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
+              <% else %>
+                <%= form_with url: '/follow', method: :post do |form| %>
+                  <h1> <%= Follow.count %> </h1>
+                  <%= form.text_field 'username', value: @username, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                  <%= form.submit "Follow", name: "follow-button", id: "follow-button", class: 'follow-button' %>
+                <% end %>
+              <% end %>
             </div> 
             <div class="profile-info">
               <div class="principal-info">
@@ -21,7 +28,7 @@
                 </div>
                 <div>
                   <h1 class="username">
-                    <%= current_user.userName %> Adelin
+                    <%= User.where(userName: @username)[0][:userName] %>
                   </h1>
                   <p class="profile-description">
                      <%= current_user.description %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 

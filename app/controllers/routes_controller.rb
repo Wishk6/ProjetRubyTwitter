@@ -4,5 +4,6 @@ class RoutesController < ApplicationController
     end
     def profile
         @tweets = Tweet.all.reverse
+        @username = params[:username]
     end
 end

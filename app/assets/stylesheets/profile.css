@@ -66,11 +66,11 @@ input:hover {
     justify-content: space-between;
 }
 
-.follow-profile {
+.follow-button {
     background: #1D9BF0;
 }
 
-.follow-profile:hover {
+.follow-button:hover {
     background-color: #1a8cd8;
     cursor: pointer;
 }
