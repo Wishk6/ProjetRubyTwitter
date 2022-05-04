@@ -11,17 +11,23 @@
       <div class="title">
         Who to follow
       </div>
-      
+    
       <div class="trendsFragment">
         
         <div class="fragText">
           
           <div class="trendsName">
-            <%= current_user.pseudo %>
+              <% hash = User.where(id: rand(User.count)) %>
+                  <% hash.each do |user| %>
+                  <%= user[:pseudo] %>
+              <% end %>
           </div>
          
           <div class="trendsData followSpeData">
-            @<%= current_user.userName %>
+            @ <% hash2 = User.where(id: rand(User.count)) %>
+                  <% hash2.each do |user| %>
+                  <%= user[:userName] %>
+              <% end %>
           </div>
         
         </div>
@@ -32,25 +38,7 @@
       
       </div>
      
-      <div class="trendsFragment">
-       
-        <div class="fragText">
-         
-          <div class="trendsName">
-            <%= current_user.pseudo %>
-          </div>
-         
-          <div class="trendsData followSpeData">
-            @<%= current_user.userName %>
-          </div>
-       
-        </div>
-       
-        <div class="followBtn">
-          Follow
-        </div>
-     
-      </div>
    
+
     </body>
   </html>
