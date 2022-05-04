@@ -30,7 +30,7 @@ class RoutesController < ApplicationController
         for user in followers
             tweets = Tweet.where(user_id: user[:id])
             if tweets.count > 0
-                @tweets.push tweets
+                @tweets << tweets
             end
         end
 
@@ -39,7 +39,7 @@ class RoutesController < ApplicationController
             retweets = Retweet.where(user_id: user[:id])
             if retweets.count > 0
                 for retweet in retweets
-                    @tweets.push Tweet.where(id: retweet[:tweet_id])
+                    @tweets << Tweet.where(id: retweet[:tweet_id])
                 end
             end
         end

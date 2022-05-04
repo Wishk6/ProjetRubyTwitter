@@ -80,7 +80,6 @@ input:hover {
 
 .tweet-area {
     width: var(--profile-width);
-    display: flex;
     border-bottom: 1px rgb(47, 51, 54) solid;
     height: fit-content;
 }
@@ -121,8 +120,6 @@ input:hover {
     display: flex;
     justify-content: space-evenly;
 }
-
-.tweets {}
 
 .modal-container-profile {
     position: absolute;
