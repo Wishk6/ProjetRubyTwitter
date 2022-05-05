@@ -9,6 +9,8 @@ class RoutesController < ApplicationController
         logger.info { @tweets.count }
     end
 
+    def notification 
+    end
 
     private
 
