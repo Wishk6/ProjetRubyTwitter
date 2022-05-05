@@ -21,7 +21,8 @@ class LikesController < ApplicationController
 
   # POST /likes or /likes.json
   def create
-    if Like.where(user_id: params['user_id'].to_i).count > 0
+    logger.info { "tttttttttttttttttttttttttttttttttt#{params['tweet_id']}" }
+    if Like.where(user_id: params['user_id'].to_i, tweet_id: params['tweet_id'].to_i).count > 0
       redirect_to '/like/' + Like.all.where(user_id: params['user_id'].to_i).first[:id].to_s
       return
     end
@@ -32,7 +33,7 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to '/', notice: "" }
+        format.html { redirect_to request.referer, notice: "" }
         format.json { render :show, status: :created, location: @like }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,7 +60,7 @@ class LikesController < ApplicationController
     Like.find(params['id']).destroy
 
     respond_to do |format|
-      format.html { redirect_to '/', notice: "" }
+      format.html { redirect_to request.referer, notice: "" }
       format.json { head :no_content }
     end
   end

@@ -4,9 +4,8 @@ class RoutesController < ApplicationController
     end
 
     def profile
-        @username = params[:username]
-        @tweets = get_user_tweets(User.where(userName: @username)[0][:id], true)
-        logger.info { @tweets.count }
+        @pseudo = params[:pseudo]
+        @tweets = get_user_tweets(User.where(pseudo: @pseudo)[0][:id], true)
     end
 
     def notification 
@@ -28,24 +27,25 @@ class RoutesController < ApplicationController
             logger.info { followers.count }
         end
 
-        #add follows tweets
+        #add tweets
+        @tweets << Tweet.where(user_id: user_id)
         for user in followers
-            tweets = Tweet.where(user_id: user[:id])
-            if tweets.count > 0
-                @tweets << tweets
+            @tweets << Tweet.where(user_id: user[:followed_id])
+            logger.info { user }
+        end
+
+        #add retweets
+        retweets = Retweet.where(user_id: user_id)
+        for retweet in retweets
+            @tweets << Tweet.where(id: retweet[:tweet_id])
+        end
+        for user in followers
+            retweets = Retweet.where(user_id: user[:followed_id])
+            for retweet in retweets
+                @tweets << Tweet.where(id: retweet[:tweet_id])
             end
         end
 
-        #add follows retweets
-        for user in followers
-            retweets = Retweet.where(user_id: user[:id])
-            if retweets.count > 0
-                for retweet in retweets
-                    @tweets << Tweet.where(id: retweet[:tweet_id])
-                end
-            end
-        end
-
-        return @tweets.reverse
+        return @tweets.reverse()
     end
 end

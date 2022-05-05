@@ -5,40 +5,44 @@
     <%= stylesheet_link_tag "trendsFollowLayout.css" %>
   </head>
   <body>
-    
+    <% users_id = Array.new %>
     <div class="trendsLayout">
       
       <div class="title">
         Who to follow
       </div>
     
-      <div class="trendsFragment">
-        
-        <div class="fragText">
-          
-          <div class="trendsName">
-              <% hash = User.where(id: rand(User.count)) %>
-                  <% hash.each do |user| %>
+
+      <% for i in 0..3 %>
+        <% hash = User.where(id: rand(User.count)) %>
+
+        <% hash.each do |user| %>
+          <% if !users_id.include?(user[:id]) %>
+
+            <% users_id << user[:id] %> 
+
+            <div class="trendsFragment">
+              <div class="fragText">
+                <div class="trendsName">
                   <%= user[:pseudo] %>
+                </div>
+              
+                <div class="trendsData followSpeData">
+                  @<%= user[:userName] %>
+                </div>
+              </div>
+            
+              <%= form_with url: '/follow', class: 'buttonContainer', method: :post do |form| %>
+                <%= form.text_field 'id', value: user[:id], style: 'visibility: hidden; width: 0px; height: 0px;' %>
+                <%= form.submit "Follow", name: "follow-button", id: "follow-button", class: 'followBtn' %>
               <% end %>
-          </div>
-         
-          <div class="trendsData followSpeData">
-            @ <% hash2 = User.where(id: rand(User.count)) %>
-                  <% hash2.each do |user| %>
-                  <%= user[:userName] %>
-              <% end %>
-          </div>
-        
-        </div>
-       
-        <div class="followBtn">
-          Follow
-        </div>
-      
-      </div>
-     
-   
+            
+            </div>
+
+          <% end %>
+        <% end %>
+
+      <% end %>
 
     </body>
   </html>

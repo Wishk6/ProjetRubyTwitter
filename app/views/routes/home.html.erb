@@ -48,7 +48,7 @@
                 <div class="post-header">
                     <div class="post-name">
                       <h2 class="header-title"><%= User.where(id: tweet[:user_id])[0][:userName] %></h2>
-                      <%= link_to "@#{User.where(id: tweet[:user_id])[0][:userName]}", "/#{User.where(id: tweet[:user_id])[0][:userName]}", class: 'author-tag' %>
+                      <%= link_to "@#{User.where(id: tweet[:user_id])[0][:pseudo]}", "/p/#{User.where(id: tweet[:user_id])[0][:pseudo]}", class: 'author-tag' %>
 
                       <%= image_tag 'dots.png', :class => 'header-menu hover-effect' %>
                     </div>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="post-footer">
-                  <%= form_with url: '/like', method: :post do |form| %>
+                  <%= form_with url: '', method: :post do |form| %>
                     <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <label for="submit-comment"  style="display: flex; align-items: center;">
@@ -71,7 +71,7 @@
                     </label>
                     <%= form.submit "", name: "submit-comment", id: "submit-comment", style: 'visibility: hidden; width: 0px; height: 0px;' %>
                   <% end %>
-                  <%= form_with url: '/like', method: :post do |form| %>
+                  <%= form_with url: '', method: :post do |form| %>
                     <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <label for="submit-retweet" style="display: flex; align-items: center;">
@@ -95,7 +95,7 @@
                     <%= form.submit "", name: "submit-like", id: "submit-like", style: 'visibility: hidden; width: 0px; height: 0px;' %>
                   <% end %>
 
-                  <%= form_with url: '/like', method: :post do |form| %>
+                  <%= form_with url: '', method: :post do |form| %>
                     <%= form.number_field 'user_id', value: current_user.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <%= form.number_field 'tweet_id', value: tweet.id, style: 'visibility: hidden; width: 0px; height: 0px;' %>
                     <label for="submit-share"  style="display: flex; align-items: center;">

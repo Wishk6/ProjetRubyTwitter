@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-  before_action :set_follow, only: %i[ show edit update destroy ]
+  before_action :set_follow, only: %i[ show edit update ]
 
   # GET /follows or /follows.json
   # def index
@@ -21,17 +21,16 @@ class FollowsController < ApplicationController
 
   # POST /follows or /follows.json
   def create
-    followed = User.where(userName: params['username'])[0]
-    @follow = Follow.new(:followed_id => followed[:id].to_i, :follower_id => current_user.id)
-    logger.info { 'followed: ' }
-    logger.info { @follow[:userName] }
+    @follow = Follow.new(followed_id: params['id'].to_i, follower_id: current_user.id)
 
     respond_to do |format|
       if @follow.save
-        format.html { redirect_to '/' + followed[:userName], notice: "" }
+        logger.info { 'save' }
+        format.html { redirect_to request.referer, notice: "" }
         format.json { render :show, status: :created, location: @follow }
       else
-        format.html { redirect_to '/', notice: "" }
+        logger.info { 'error' }
+        format.html { redirect_to request.referer, notice: "" }
         format.json { render json: @follow.errors, status: :unprocessable_entity }
       end
     end
@@ -55,7 +54,7 @@ class FollowsController < ApplicationController
     @follow.destroy
 
     respond_to do |format|
-      format.html { redirect_to follows_url, notice: "Follow was successfully destroyed." }
+      format.html { redirect_to request.referer, notice: "Follow was successfully destroyed." }
       format.json { head :no_content }
     end
   end

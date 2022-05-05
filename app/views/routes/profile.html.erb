@@ -11,11 +11,11 @@
   <main>
     <nav>
       <%= image_tag('back_arrow.png', :onclick => "history.back()".html_safe, :class => "imgbtn")  %>
-      <% if current_user.userName == @username %>
+      <% if current_user.pseudo == @pseudo %>
         <input type="button" class="edit-profile" value="Edit profile" onclick="displayModal()">
       <% else %>
         <%= form_with url: '/follow', method: :post do |form| %>
-          <%= form.text_field 'username', value: @username, style: 'visibility: hidden; width: 0px; height: 0px;' %>
+          <%= form.text_field 'username', value: User.where(pseudo: @pseudo)[0][:id], style: 'visibility: hidden; width: 0px; height: 0px;' %>
           <%= form.submit "Follow", name: "follow-button", id: "follow-button", class: 'follow-button' %>
         <% end %>
       <% end %>
@@ -29,7 +29,7 @@
             </div>
             <div>
               <h1 class="username">
-                <%= User.where(userName: @username)[0][:userName] %>
+                <%= User.where(pseudo: @pseudo)[0][:userName] %>
               </h1>
               <p class="profile-description">
                 <%= current_user.description %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi lobortis nibh tincidunt urna mattis tristique. Vivamus et euismod nulla. Donec sit amet velit sed justo elementum lacinia. Pellentesque auctor ipsum ac dictum facilisis. Suspendisse porttitor, quam fermentum posuere maximus, nibh purus condimentum neque, at bibendum sapien lacus nec eros. 
@@ -71,7 +71,7 @@
                 <div class="post-header">
                     <div class="post-name">
                       <h2 class="header-title"><%= User.where(id: tweet[:user_id])[0][:userName] %></h2>
-                      <p class="author-tag">@<%= User.where(id: tweet[:user_id])[0][:userName] %></p> 
+                      <p class="author-tag">@<%= User.where(id: tweet[:user_id])[0][:pseudo] %></p> 
 
                       <%= image_tag 'dots.png', :class => 'header-menu hover-effect' %>
                     </div>
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="post-content">
-                  <%= image_tag 'test-tweet-content-picture.jpeg', width: 25, :class => 'content-image' %>
+                  <%# image content %>
                 </div>
 
                 <div class="post-footer">
